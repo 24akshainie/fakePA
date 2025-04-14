@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Lora', serif;
+      background: linear-gradient(to right,  #FF99AC, #FAE0E4);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      width: 100%;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .logo-text {
+      font-size: 24px;
+      font-weight: 700;
+      margin-left: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #000000;
+      font-size: 16px;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .horizontal-line {
+      width: 100%;
+      height: 1px;
+      background-color: #000000;
+    }
+
+    .main-text {
+      font-size: 32px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 30px;
+    }
+
+    .dashboard-box {
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .dashboard-title {
+      font-size: 24px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .search-bar input {
+      background-color: #FAE0E4;
+      padding: 10px;
+      width: 60%;
+      border: 1px solid #FAE0E4;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      background-color: #ffffff;
+      color: #000000;
+      padding: 12px;
+    }
+
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .view-btn {
+      background-color: #000000;
+      color: #f6f9fc;
+      border: 2px solid #000000;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .view-btn:hover {
+      background-color: transparent;
+      color: #000000;
+    }
+
+    @media (max-width: 600px) {
+      .search-bar input {
+        width: 100%;
+      }
+
+      th, td {
+        font-size: 14px;
+      }
+    }
+    
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="toolbar">
+      <div class="logo">
+        <img src="logo.png" alt="Swarup Logo">
+        <span class="logo-text">Swarup</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="horizontal-line"></div>
+  </header>
+
+  <div><br></div>
+  <div><br></div>
+  <div><br></div>
+  <div><br></div>
+  <div class="dashboard-box">
+    <div class="dashboard-title">Doctor's Dashboard</div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search patient…" />
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th align="left">Patient Name</th>
+          <th align="left">Age</th>
+          <th align="left">Condition</th>
+          <th align="left">PDF Report</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John Doe</td>
+          <td>35</td>
+          <td>Flu</td>
+          <td align="justify-content"><a href="/download/report-john.pdf" class="view-btn">View PDF</a></td>
+        </tr>
+        <tr>
+          <td>Jane Smith</td>
+          <td>28</td>
+          <td>Diabetes</td>
+          <td align="justify-content"><a href="/download/report-jane.pdf" class="view-btn">View PDF</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    &copy; 2025 Swarup Healthcare. All rights reserved.
+  </footer>
+</body>
+</html>
